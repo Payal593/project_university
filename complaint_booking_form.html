@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+.container{
+    width: 1390px;
+    margin: auto;
+}
+.form-row{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.wrapper_complaint_container{
+    width: 65%;
+    margin: auto;
+    padding: 20px;
+}
+.input-form-contact {
+    width: 48%;
+    border-radius: 6px;
+    border: 1px solid #dfdbdb;
+    outline: none;
+}
+p.heading--para, h2.heading--text {
+    text-align: center;
+}
+select#select_branch {
+    width: 48.8%;
+}
+input.input-form-contact.email_main {
+    width: 100%;
+}
+.chk_type{
+    display: flex;
+    text-align: center;
+    gap: 25px;
+}
+input[type="radio"] {
+    width: 1.6em;
+}
+.chk_type p {
+    font-size: 19px;
+}
+textarea.textarea{
+    border-radius: 6px;
+    border: 1px solid #dfdbdb;
+    width: 100%;
+    outline: none;
+}
+p.heading--para {
+    font-size: 20px;
+}
+h2.heading--text {
+    font-size: 35px;
+    font-weight: 200;
+}
+.submit_btn {
+    width: 191px;
+    height: 50px;
+    /* border-radius: 5px; */
+}
+button.submit_button {
+    height: 100%;
+    width: 100%;
+}
+button.submit_button {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+}
+@media screen and (max-width: 600px){
+    .container, .wrapper_complaint_container{
+        width: 100%;
+        padding: 0px;
+    }
+
+    .input-form-contact {
+        width: 100%;
+        box-sizing: border-box; 
+    }
+    .form-row {
+    width: 100%;
+    height: auto; 
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 10px;
+}
+
+.input-form-contact {
+    width: 100%; 
+    box-sizing: border-box; 
+    margin-bottom: 10px; 
+    height: 3.7em; 
+}
+select#select_branch {
+    width: 100%;
+}
+}
+    </style>
+
+    <div class="container">
+        <div class="wrapper_complaint_container">
+            <div class="heading_complaint_text">
+                <h2 class="heading--text">Complaint Application Form</h2>
+                <p class="heading--para">Please fill in the form below carefully. And state your reasons in points</p>  
+        </div>
+        <div class="input_details">
+            <div class="Fname form-row"><input type="text" id="input_fname" class="input-form-contact" placeholder="First Name"><p id="fname"></p><input type="text" class="input-form-contact" placeholder="Last Name"><p id="lname"></p></div>
+            <div class="department form-row"><select name="select" id="select_branch" class="input-form-contact"><option value="Cse">Cse</option><option value="Cse">ECE</option><option value="Cse">Cse</option><option value="Cse">Cse</option></select><p id="select_field"></p><input type="number" class="input-form-contact" placeholder="Phone Number"><p id="number"></p></div>
+            <div class="email_main form-row"><input type="email" class="input-form-contact email_main" placeholder="Email-Id"><p id="email"></p></div>
+        </div>
+        <div class="chk_type">
+            <input type="radio" name="reason"><p>Personal Reason</p>
+        </div>
+        <div class="chk_type">
+            <input type="radio" name="reason"><p>Acedemic</p>
+        </div>
+        <div class="chk_type">
+            <input type="radio" name="reason"><p>Other</p>
+        </div>
+        <textarea name="description"  required="" class="textarea" rows="9" cols="5"></textarea>
+        <div class="submit_btn"><button class="submit_button">Submit</button></div>
+
+        </div>
+    </div>
+    <script>
+        let FirstName = document.getElementById('input_fname');
+        let spanName = document.getElementById('fname');
+
+        FirstName.addEventListener('blur', () =>{
+            if ('input_fname'.value?.trim() === ''){
+                spanName.textContent = 'This first name field required';
+    } else {
+        spanName.textContent = '';
+    }
+  });
+        
+    </script>
+</body>
+</html>
